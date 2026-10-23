@@ -1,0 +1,230 @@
+﻿/* ================================================
+   Mavi Fırın – Premium CSS Tasarımı
+   Sıcak fırın tonları + Mavi marka rengi
+   ================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+/* ---------- CSS Değişkenleri (Renk Paleti) ---------- */
+:root {
+  --mavi-koyu:    #0d2b52;
+  --mavi-ana:     #163b65;
+  --mavi-acik:    #2a5d9f;
+  --altin:        #e8a020;
+  --altin-acik:   #f5c842;
+  --krem:         #fdf6ec;
+  --krem-koyu:    #f2e4c8;
+  --beyaz:        #ffffff;
+  --yazi-koyu:    #1a1a2e;
+  --yazi-gri:     #555566;
+  --golge:        rgba(22, 59, 101, 0.15);
+}
+
+/* ---------- Reset & Temel ---------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--yazi-koyu);
+  background: linear-gradient(160deg, #fdf6ec 0%, #fbefd8 40%, #f0e6d0 100%);
+  min-height: 100vh;
+}
+
+/* ---------- HEADER ---------- */
+header {
+  background: linear-gradient(90deg, var(--mavi-koyu) 0%, var(--mavi-ana) 50%, var(--mavi-acik) 100%);
+  padding: 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 20px rgba(13, 43, 82, 0.4);
+}
+
+/* ---------- NAV ---------- */
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 6px;
+  padding: 14px 32px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+nav::before {
+  content: "🥖 Mavi Fırın";
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--altin-acik);
+  margin-right: auto;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+nav a {
+  color: rgba(255, 255, 255, 0.88);
+  font-weight: 500;
+  font-size: 0.92rem;
+  text-decoration: none;
+  padding: 7px 16px;
+  border-radius: 30px;
+  letter-spacing: 0.3px;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  position: relative;
+}
+
+nav a:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: var(--altin-acik);
+  transform: translateY(-1px);
+}
+
+/* ---------- MAIN WRAPPER ---------- */
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 24px 60px;
+}
+
+/* ---------- BAŞLIKLAR ---------- */
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--mavi-koyu);
+  margin-bottom: 12px;
+  position: relative;
+  padding-bottom: 14px;
+}
+
+h1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 70px;
+  height: 4px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--altin) 0%, var(--altin-acik) 100%);
+}
+
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  color: var(--mavi-ana);
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+p {
+  color: var(--yazi-gri);
+  margin-bottom: 10px;
+  font-size: 0.97rem;
+}
+
+/* ---------- KARTLAR ---------- */
+.kart {
+  background: var(--beyaz);
+  border-radius: 16px;
+  border-top: 4px solid var(--altin);
+  padding: 24px 28px;
+  margin: 18px 0;
+  box-shadow: 0 4px 20px var(--golge), 0 1px 4px rgba(0,0,0,0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.kart::before {
+  content: '';
+  position: absolute;
+  bottom: -30px;
+  right: -30px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--altin-acik), var(--krem-koyu));
+  opacity: 0.2;
+  transition: transform 0.4s ease;
+}
+
+.kart:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(22, 59, 101, 0.2), 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.kart:hover::before {
+  transform: scale(1.4);
+}
+
+/* ---------- LİNKLER ---------- */
+a {
+  color: var(--mavi-acik);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--altin);
+  text-decoration: underline;
+}
+
+/* ---------- BUTON ---------- */
+.buton {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--mavi-ana) 0%, var(--mavi-acik) 100%);
+  color: var(--beyaz);
+  padding: 11px 26px;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 0.92rem;
+  letter-spacing: 0.4px;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 14px rgba(22, 59, 101, 0.35);
+}
+
+.buton:hover {
+  background: linear-gradient(135deg, var(--altin) 0%, var(--altin-acik) 100%);
+  color: var(--mavi-koyu);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(232, 160, 32, 0.4);
+  text-decoration: none;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+  text-align: center;
+  padding: 28px 20px;
+  font-size: 0.85rem;
+  background: linear-gradient(90deg, var(--mavi-koyu) 0%, var(--mavi-ana) 100%);
+  color: rgba(255,255,255,0.65);
+  margin-top: 60px;
+  letter-spacing: 0.3px;
+}
+
+/* ---------- GÖRSEL & TABLO ---------- */
+img, table {
+  max-width: 100%;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 600px) {
+  h1 { font-size: 1.7rem; }
+  nav { padding: 12px 18px; }
+  nav::before { font-size: 1.1rem; }
+  main { padding: 24px 16px 40px; }
+  .kart { padding: 18px 20px; }
+}
